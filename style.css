@@ -69,6 +69,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* =========================
@@ -490,6 +491,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+  cursor: pointer;
 }
 
 .chat-panel {
@@ -499,6 +502,10 @@ body {
   height: 100vh;
   background: #111;
   transition: 0.4s;
+  z-index: 999;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.5);
 }
 
 .chat-panel.active {
@@ -1041,15 +1048,56 @@ body {
    CHAT PANEL UPGRADE
 ========================= */
 
+.chat-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: #111;
+  z-index: 10;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.chat-header #closeChat {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.chat-header #closeChat:hover {
+  color: #fff;
+}
+
+#chatForm {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .chat-panel select {
   background: rgba(255,255,255,0.05);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
 }
 
 /* Improve dropdown appearance */
 .chat-panel select:focus {
   border-color: #4da3ff;
+  outline: none;
+  background: rgba(255,255,255,0.08);
 }
 
 /* Fix Windows Chrome dropdown */
@@ -1062,6 +1110,33 @@ body {
 .chat-panel select option:checked {
   background-color: #4da3ff !important;
   color: #fff !important;
+}
+
+#chatForm textarea {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+#chatForm textarea:focus {
+  border-color: #4da3ff;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+}
+
+#chatForm button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* =========================
