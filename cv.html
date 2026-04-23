@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edward - Full Stack Developer CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.5;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* HEADER */
+    .header {
+      border-bottom: 2px solid #4da3ff;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #000;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .header .title {
+      font-size: 1.2rem;
+      color: #4da3ff;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-info a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #000;
+      background: #f0f7ff;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #4da3ff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* SUMMARY */
+    .summary-text {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* TECH STACK */
+    .tech-group {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 15px;
+      margin-bottom: 12px;
+      align-items: baseline;
+    }
+
+    .tech-label {
+      font-weight: 600;
+      color: #000;
+    }
+
+    .tech-list {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* PROJECT */
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project-title {
+      font-weight: 700;
+      color: #000;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .project-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .project-bullets {
+      list-style: none;
+      margin-left: 15px;
+      color: #555;
+      font-size: 0.92rem;
+    }
+
+    .project-bullets li {
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .project-bullets li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #4da3ff;
+      font-weight: bold;
+    }
+
+    /* EDUCATION */
+    .education-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      margin-bottom: 15px;
+      align-items: baseline;
+    }
+
+    .edu-text {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .edu-text strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 40px;
+        box-shadow: none;
+      }
+
+      .section-title {
+        page-break-after: avoid;
+      }
+
+      .project {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .container {
+        padding: 25px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-group {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .tech-label {
+        font-size: 0.9rem;
+      }
+
+      .tech-list {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <div class="header">
+      <h1>Edward</h1>
+      <div class="title">Full-Stack Developer</div>
+      <div class="contact-info">
+        <span>📍 Ibadan, Nigeria</span>
+        <span>📱 +234 704 990 0703</span>
+        <span>📧 <a href="mailto:eddyolly23@gmail.com">eddyolly23@gmail.com</a></span>
+        <span>🌐 <a href="https://portfolio-navy-five-92.vercel.app" target="_blank">portfolio-navy-five-92.vercel.app</a></span>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        Full-stack developer building scalable web and mobile systems with a focus on real-world products. 
+        Experienced in JavaScript, Python, and backend architecture, with projects spanning security systems, 
+        attendance platforms, and live business deployments. Known for shipping production-ready code and designing 
+        systems that solve concrete problems.
+      </p>
+    </div>
+
+    <!-- TECH STACK -->
+    <div class="section">
+      <div class="section-title">Technical Stack</div>
+      <div class="tech-group">
+        <span class="tech-label">Frontend:</span>
+        <span class="tech-list">React, HTML, CSS, JavaScript, WordPress</span>
+      </div>
+      <div class="tech-group">
+        <span class="tech-label">Backend:</span>
+        <span class="tech-list">Node.js, Express, Django, Flask, Python, PHP</span>
+      </div>
+      <div class="tech-group">
+        <span class="tech-label">Mobile:</span>
+        <span class="tech-list">React Native, JavaScript</span>
+      </div>
+      <div class="tech-group">
+        <span class="tech-label">Databases:</span>
+        <span class="tech-list">MongoDB, PostgreSQL, MySQL</span>
+      </div>
+      <div class="tech-group">
+        <span class="tech-label">Specialties:</span>
+        <span class="tech-list">Session-based validation, API design, Real-time systems, Machine Learning, Network security</span>
+      </div>
+      <div class="tech-group">
+        <span class="tech-label">Tools & Platforms:</span>
+        <span class="tech-list">Git, GitHub, Vercel, Render, Docker</span>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="section-title">Featured Projects</div>
+
+      <div class="project">
+        <div class="project-title">Smart Attendance System (Universe)</div>
+        <div class="project-desc">Session-based attendance platform with location validation and biometric integration</div>
+        <ul class="project-bullets">
+          <li>Designed secure validation workflow using session-based codes to prevent fraud</li>
+          <li>Implemented real-time location verification to ensure attendance authenticity</li>
+          <li>Built scalable architecture supporting 20,000+ attendance checks</li>
+          <li><strong>Tech:</strong> Python, Flask, JavaScript, Location APIs, Session Management</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Hotel Booking & QR Digital Menu System</div>
+        <div class="project-desc">Live hospitality platform combining online booking with contactless dining</div>
+        <ul class="project-bullets">
+          <li>Built responsive booking platform used in real business environment</li>
+          <li>Designed QR-based menu system for seamless guest ordering experience</li>
+          <li>Optimized mobile-first interface for improved customer flow</li>
+          <li><strong>Tech:</strong> WordPress, PHP, JavaScript, QR System, UI/UX Optimization</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Intrusion Detection & Prevention System (IDS/IPS)</div>
+        <div class="project-desc">AI-powered network security system detecting anomalous behavior in real-time</div>
+        <ul class="project-bullets">
+          <li>Developed anomaly-based detection system beyond traditional rule-based approaches</li>
+          <li>Implemented real-time threat alerts and automated response mechanisms</li>
+          <li>Built machine learning pipeline for unknown attack detection</li>
+          <li><strong>Tech:</strong> Python, Django, Machine Learning, Network Security, Anomaly Detection</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Gaming Community Platform (Game Nexus)</div>
+        <div class="project-desc">Multi-game community hub for organizing matches and player engagement</div>
+        <ul class="project-bullets">
+          <li>Designed matchmaking system connecting 500+ active players</li>
+          <li>Built modular architecture supporting multiple game titles</li>
+          <li>Created community engagement tools improving match coordination</li>
+          <li><strong>Tech:</strong> Node.js, Express, JavaScript, Community Systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- KEY ACHIEVEMENTS -->
+    <div class="section">
+      <div class="section-title">Key Achievements</div>
+      <ul class="project-bullets">
+        <li>Delivered 4 production systems across diverse domains (security, hospitality, gaming, education)</li>
+        <li>99.9% system accuracy on critical attendance validation workflow</li>
+        <li>Built and shipped live business deployments used by real users</li>
+        <li>Designed scalable backend architectures supporting thousands of concurrent users</li>
+      </ul>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education & Training</div>
+      <div class="education-item">
+        <div class="edu-text"><strong>Cyber Security</strong><br>Ladoke Akintola University of Technology (LAUTECH)</div>
+        <div>Class of 2027</div>
+      </div>
+      <div class="education-item">
+        <div class="edu-text"><strong>Full-Stack Software Development</strong><br>TS Academy</div>
+        <div>Apr 30, 2026 - Present</div>
+      </div>
+      <div class="education-item">
+        <div class="edu-text"><strong>Self-Taught Development</strong><br>Continuous Learning & Real-world Projects</div>
+        <div>2020 - Present</div>
+      </div>
+    </div>
+
+    <!-- AVAILABILITY -->
+    <div class="section">
+      <div class="section-title">Availability</div>
+      <p class="summary-text">
+        🟢 Available for freelance projects and full-time opportunities. Open to remote and on-site roles.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
