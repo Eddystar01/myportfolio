@@ -1040,85 +1040,29 @@ body {
 /* =========================
    CHAT PANEL UPGRADE
 ========================= */
-.chat-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
-  height: 100vh;
-  background: rgba(15,15,15,0.95);
-  backdrop-filter: blur(12px);
-  transform: translateX(100%);
-  transition: 0.4s ease;
-  z-index: 9999;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.6);
-  padding: 20px;
-}
 
-.chat-panel.active {
-  transform: translateX(0);
-}
-
-.chat-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.chat-header span {
-  cursor: pointer;
-}
-
-.chat-panel form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.chat-panel select,
-.chat-panel textarea {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
+.chat-panel select {
   background: rgba(255,255,255,0.05);
   color: #fff;
-
-  padding: 12px;
-  border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.1);
-  outline: none;
-
-  font-size: 0.9rem;
-  cursor: pointer;
 }
 
+/* Improve dropdown appearance */
+.chat-panel select:focus {
+  border-color: #4da3ff;
+}
+
+/* Fix Windows Chrome dropdown */
 .chat-panel select option {
-  background: #111;
-  color: #fff;
+  background-color: #111 !important;
+  color: #fff !important;
 }
 
-.chat-panel textarea {
-  height: 100px;
+/* Remove ugly highlight */
+.chat-panel select option:checked {
+  background-color: #4da3ff !important;
+  color: #fff !important;
 }
-
-.chat-button {
-  z-index: 9999;
-  box-shadow: 0 10px 30px rgba(77,163,255,0.4);
-  transition: 0.3s;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 10px 30px rgba(77,163,255,0.4); }
-  50% { box-shadow: 0 10px 30px rgba(77,163,255,0.6); }
-  100% { box-shadow: 0 10px 30px rgba(77,163,255,0.4); }
-}
-
-.chat-button:hover {
-  transform: scale(1.1);
-}
-
 
 /* =========================
    FOOTER
