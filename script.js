@@ -85,7 +85,6 @@ addStaggerAnimation(workflowSteps, 200);
 /* =========================
    CHAT SYSTEM (UPGRADED)
 ========================= */
-
 const chatBtn = document.getElementById("chatBtn");
 const chatPanel = document.getElementById("chatPanel");
 const closeChat = document.getElementById("closeChat");
@@ -109,7 +108,7 @@ if (chatPanel) {
     closeChat.addEventListener("click", closeChatPanel);
   }
 
-  // Start Project buttons
+  // Start Project + Contact buttons
   [openChatBtn, openChatBtn2, footerChatBtn].forEach(btn => {
     if (btn) {
       btn.addEventListener("click", (e) => {
@@ -119,23 +118,22 @@ if (chatPanel) {
     }
   });
 
-  // Prevent instant close bug (FIXED)
-  document.addEventListener("click", (e) => {
-    const isInsideChat = chatPanel.contains(e.target);
+  // 🚨 CRITICAL FIX: Stop clicks inside chat from bubbling
+  chatPanel.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
 
+  // Close only when clicking truly outside
+  document.addEventListener("click", (e) => {
     const isChatTrigger =
       e.target.closest("#chatBtn") ||
       e.target.closest("#openChatBtn") ||
       e.target.closest("#openChatBtn2") ||
       e.target.closest("#footerChatBtn");
 
-    const isFormElement =
-      e.target.tagName === "SELECT" ||
-      e.target.tagName === "OPTION" ||
-      e.target.tagName === "TEXTAREA" ||
-      e.target.tagName === "INPUT";
+    if (!chatPanel.classList.contains("active")) return;
 
-    if (!isInsideChat && !isChatTrigger && !isFormElement) {
+    if (!chatPanel.contains(e.target) && !isChatTrigger) {
       closeChatPanel();
     }
   });
@@ -145,7 +143,6 @@ if (chatPanel) {
     if (e.key === "Escape") closeChatPanel();
   });
 }
-
 
 /* =========================
    WHATSAPP FORM
