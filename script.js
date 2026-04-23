@@ -85,49 +85,56 @@ addStaggerAnimation(workflowSteps, 200);
 /* =========================
    CHAT SYSTEM (UPGRADED)
 ========================= */
+
 const chatBtn = document.getElementById("chatBtn");
 const chatPanel = document.getElementById("chatPanel");
 const closeChat = document.getElementById("closeChat");
+
 const openChatBtn = document.getElementById("openChatBtn");
 const openChatBtn2 = document.getElementById("openChatBtn2");
+const footerChatBtn = document.getElementById("footerChatBtn");
 
-if (chatBtn && chatPanel && closeChat) {
+if (chatPanel) {
 
   const openChat = () => chatPanel.classList.add("active");
   const closeChatPanel = () => chatPanel.classList.remove("active");
 
-  chatBtn.addEventListener("click", openChat);
-  closeChat.addEventListener("click", closeChatPanel);
-
-  if (openChatBtn) {
-    openChatBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openChat();
-    });
+  // Floating chat button
+  if (chatBtn) {
+    chatBtn.addEventListener("click", openChat);
   }
 
-  if (openChatBtn2) {
-    openChatBtn2.addEventListener("click", (e) => {
-      e.preventDefault();
-      openChat();
-    });
+  // Close button
+  if (closeChat) {
+    closeChat.addEventListener("click", closeChatPanel);
   }
 
-  // Footer chat button
-  const footerChatBtn = document.getElementById("footerChatBtn");
-  if (footerChatBtn) {
-    footerChatBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openChat();
-    });
-  }
+  // Start Project buttons
+  [openChatBtn, openChatBtn2, footerChatBtn].forEach(btn => {
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openChat();
+      });
+    }
+  });
 
+  // Prevent instant close bug (FIXED)
   document.addEventListener("click", (e) => {
-    if (!chatPanel.contains(e.target) && !chatBtn.contains(e.target)) {
+    const isInsideChat = chatPanel.contains(e.target);
+
+    const isChatTrigger =
+      e.target.closest("#chatBtn") ||
+      e.target.closest("#openChatBtn") ||
+      e.target.closest("#openChatBtn2") ||
+      e.target.closest("#footerChatBtn");
+
+    if (!isInsideChat && !isChatTrigger) {
       closeChatPanel();
     }
   });
 
+  // ESC key closes chat
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeChatPanel();
   });

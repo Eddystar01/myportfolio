@@ -1041,11 +1041,22 @@ body {
    CHAT PANEL UPGRADE
 ========================= */
 .chat-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
   background: rgba(15,15,15,0.95);
   backdrop-filter: blur(12px);
+  transform: translateX(100%);
+  transition: 0.4s ease;
+  z-index: 9999;
   box-shadow: -10px 0 30px rgba(0,0,0,0.6);
   padding: 20px;
-  z-index: 9999;
+}
+
+.chat-panel.active {
+  transform: translateX(0);
 }
 
 .chat-header {
