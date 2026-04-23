@@ -1077,11 +1077,24 @@ body {
 
 .chat-panel select,
 .chat-panel textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
   background: rgba(255,255,255,0.05);
+  color: #fff;
+
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  outline: none;
+
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.chat-panel select option {
+  background: #111;
   color: #fff;
 }
 
