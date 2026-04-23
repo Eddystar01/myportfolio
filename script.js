@@ -129,7 +129,13 @@ if (chatPanel) {
       e.target.closest("#openChatBtn2") ||
       e.target.closest("#footerChatBtn");
 
-    if (!isInsideChat && !isChatTrigger) {
+    const isFormElement =
+      e.target.tagName === "SELECT" ||
+      e.target.tagName === "OPTION" ||
+      e.target.tagName === "TEXTAREA" ||
+      e.target.tagName === "INPUT";
+
+    if (!isInsideChat && !isChatTrigger && !isFormElement) {
       closeChatPanel();
     }
   });
