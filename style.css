@@ -757,6 +757,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 10px;
   background: linear-gradient(45deg, #4da3ff, #fff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -793,6 +794,19 @@ body {
 #contactForm textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* Formspree error styling */
+[data-fs-error] {
+  display: block;
+  margin-top: 5px;
+  color: #ff4d4d;
+  font-size: 0.9rem;
+}
+
+[data-fs-success] {
+  color: #4da3ff;
+  margin-bottom: 20px;
 }
 
 /* =========================

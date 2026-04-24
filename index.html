@@ -18,7 +18,9 @@
   <meta property="twitter:url" content="https://portfolio-navy-five-92.vercel.app">
   <meta property="twitter:title" content="Olanrewaju Edward O. | Full Stack Developer">
   <meta property="twitter:description" content="Full-stack developer building scalable web and mobile systems. Available for freelance projects and job opportunities.">
-  <meta property="twitter:image" content="https://portfolio-navy-five-92.vercel.app/assets/images/hero.png">  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://formspree.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io;">  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <meta property="twitter:image" content="https://portfolio-navy-five-92.vercel.app/assets/images/hero.png">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://formspree.io https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://www.google-analytics.com https://www.google.com;">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <title>Olanrewaju Edward O. | Full Stack Developer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
@@ -344,11 +346,16 @@
 <section class="contact" id="contact">
   <h2>Get In Touch</h2>
   <p>Ready to start your next project? Let's discuss your ideas.</p>
-  <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn primary">Send Message</button>
+  <div data-fs-success></div>
+  <div data-fs-error></div>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" data-fs-field required>
+    <span data-fs-error="name"></span>
+    <input type="email" name="email" placeholder="Your Email" data-fs-field required>
+    <span data-fs-error="email"></span>
+    <textarea name="message" placeholder="Your Message" data-fs-field required></textarea>
+    <span data-fs-error="message"></span>
+    <button type="submit" class="btn primary" data-fs-submit-btn>Send Message</button>
   </form>
 </section>
 
@@ -382,6 +389,13 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- Formspree AJAX -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contactForm', formId: 'xzdyynga' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
