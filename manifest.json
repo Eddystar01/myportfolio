@@ -1,0 +1,16 @@
+{
+  "name": "Olanrewaju Edward O. Portfolio",
+  "short_name": "Edward Portfolio",
+  "description": "Full-stack developer portfolio showcasing web and mobile projects",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#4da3ff",
+  "icons": [
+    {
+      "src": "assets/images/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

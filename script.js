@@ -319,6 +319,35 @@ if (hero) {
   });
 }
 
+/* =========================
+   SERVICE WORKER REGISTRATION (PWA)
+========================= */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => console.log('SW registered'))
+      .catch(error => console.log('SW registration failed'));
+  });
+}
+
+/* =========================
+   THEME TOGGLE
+========================= */
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  document.body.classList.toggle('light-mode', currentTheme === 'light');
+  themeToggle.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    const newTheme = isLight ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+  });
+}
+
 
 /* =========================
    PROJECT CARD TILT EFFECT (ENHANCED)

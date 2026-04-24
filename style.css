@@ -82,6 +82,21 @@ body {
   margin-bottom: 15px;
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #4da3ff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(77, 163, 255, 0.1);
+}
+
 .avatar {
   width: 40px;
   height: 40px;
@@ -727,6 +742,57 @@ body {
 .cta p {
   color: #aaa;
   margin-bottom: 25px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact {
+  padding: 80px 10%;
+  text-align: center;
+  background: rgba(255,255,255,0.02);
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #4da3ff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+#contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 15px;
+  border: 1px solid #4da3ff;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 1rem;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #aaa;
+}
+
+#contactForm textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 /* =========================
@@ -1717,6 +1783,29 @@ body {
     font-size: 0.9rem;
   }
 
+  /* CONTACT */
+  .contact {
+    padding: 40px 15px !important;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact p {
+    font-size: 0.9rem;
+  }
+
+  #contactForm {
+    gap: 15px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    padding: 12px;
+    font-size: 16px;
+  }
+
   /* CHAT PANEL */
   .chat-panel {
     width: 100%;
@@ -1781,4 +1870,61 @@ body {
     animation-duration: 0.2s !important;
     transition-duration: 0.2s !important;
   }
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body.light-mode {
+  background: #f5f5f5;
+  color: #333;
+}
+
+body.light-mode .hero::before {
+  background: radial-gradient(circle, rgba(77, 163, 255, 0.2), transparent);
+}
+
+body.light-mode .status {
+  background: rgba(0,0,0,0.08);
+}
+
+body.light-mode .project-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .service-card,
+body.light-mode .testimonial-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .workflow-step {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+}
+
+body.light-mode .contact {
+  background: rgba(0,0,0,0.02);
+}
+
+body.light-mode #contactForm input,
+body.light-mode #contactForm textarea {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+body.light-mode #contactForm input::placeholder,
+body.light-mode #contactForm textarea::placeholder {
+  color: #666;
+}
+
+body.light-mode .footer {
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+body.light-mode .theme-toggle {
+  color: #333;
 }
